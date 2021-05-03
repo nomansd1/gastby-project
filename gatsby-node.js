@@ -11,6 +11,11 @@ exports.createPages=async ({actions,graphql})=>{
   const result=await graphql(` {
     allContentfulBlogs {
       nodes {
+        categories
+      subTitle
+      recentPosts
+      labels
+      
       
         keywords
         slug
@@ -32,6 +37,10 @@ exports.createPages=async ({actions,graphql})=>{
     
     allContentfulPortfolios {
       nodes {
+        categories
+        weburl
+        subtitle
+        timeOfcreation
      
         keywords
         title

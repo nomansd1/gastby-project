@@ -5,7 +5,9 @@ import logo from '../../assets/blog_images/logo-name.png'
 import bg from '../../assets/blog_images/portfolio image.jpg'
 
 
-function Portfolio() {
+function Portfolio({pageContext}) {
+ const {Item_Details}=pageContext
+ 
   return (
     <>
       {/* <header /> */}
@@ -96,32 +98,34 @@ function Portfolio() {
           <img src={logo} className="logo" />
           <h2>&#60;BLOG&#62;</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur
+            {/* Lorem ipsum dolor sit amet, consectetur
             adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore.
+            incididunt ut labore et dolore. */}
           </p>
 
           <h2>&#60;POSTS RECIENTES&#62;</h2>
-          <p><strong>Lorem Ipsum</strong> <br /> 04/oct2020</p>
+          {/* <p><strong>Lorem Ipsum</strong> <br /> 04/oct2020</p>
 
           <p><strong>Lorem Ipsum</strong> <br /> 04/oct2020</p>
 
-          <p><strong>Lorem Ipsum</strong> <br /> 04/oct/2020</p>
+          <p><strong>Lorem Ipsum</strong> <br /> 04/oct/2020</p> */}
+          
 
           <h2>&#60;CATEGORIAS&#62;</h2>
-          <ul>
+          {/* <ul>
             <li>Desarallo Web</li>
             <li>Diseno Web</li>
             <li>Ecommerce</li>
             <li>SEO</li>
             <li>Elementor</li>
             <li>Otros</li>
-          </ul>
-
+          </ul> */}
+         
           <h2>&#60;ETIQUETAS&#62;</h2>
+          {/* <span>ETIQUETA</span> <span>ETIQUETA</span><br />
           <span>ETIQUETA</span> <span>ETIQUETA</span><br />
-          <span>ETIQUETA</span> <span>ETIQUETA</span><br />
-          <span>ETIQUETA</span>
+          <span>ETIQUETA</span> */}
+          
         </div>
       </div>
 

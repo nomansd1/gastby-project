@@ -59,7 +59,8 @@ export default function Home({pageContext}) {
             <img src={image} />
           </div>
           <div className="article__body">
-            <p className="article__date">04/OCT/2020 by Keylen James</p>
+            {/* <p className="article__date">04/OCT/2020 by Keylen James</p> */}
+            <br></br>
            <h1 className="article__title" >
              {Title}
              </h1>
@@ -152,35 +153,54 @@ export default function Home({pageContext}) {
           <img src={logo} className="logo"/>
           <h2>&#60;BLOG&#62;</h2>
           <p>
-          Lorem ipsum dolor sit amet, consectetur 
-          adipiscing elit, sed do eiusmod tempor 
-          incididunt ut labore et dolore.
+       {Item_Details.subTitle}
           </p>
 
           <h2>&#60;POSTS RECIENTES&#62;</h2>
-          <p><strong>Lorem Ipsum</strong> <br/> 04/oct2020</p>
+          {/* <p><strong>Lorem Ipsum</strong> <br/> 04/oct2020</p>
           
           <p><strong>Lorem Ipsum</strong> <br/> 04/oct2020</p>
           
-          <p><strong>Lorem Ipsum</strong> <br/> 04/oct/2020</p>
-
+          <p><strong>Lorem Ipsum</strong> <br/> 04/oct/2020</p> */}
+     
+         {Item_Details.recentPosts.map(val => {
+            return (
+              <li>{val}</li>
+            )
+          })}
           <h2>&#60;CATEGORIAS&#62;</h2>
           <ul>
-            <li>Desarallo Web</li>
+            {/* <li>Desarallo Web</li>
             <li>Diseno Web</li>
             <li>Ecommerce</li>
             <li>SEO</li>
             <li>Elementor</li>
-            <li>Otros</li>
+            <li>Otros</li> */}
+            {/* {Item_Details.categories.categories} */}
+            {Item_Details.categories.map(val => {
+            return (
+              <li>{val}</li>
+            )
+          })}
           </ul>
 
-          <h2>&#60;ETIQUETAS&#62;</h2>
+          <h2>&#60;Labels&#62;</h2>
+          {/* <span>ETIQUETA</span> <span>ETIQUETA</span><br/>
           <span>ETIQUETA</span> <span>ETIQUETA</span><br/>
-          <span>ETIQUETA</span> <span>ETIQUETA</span><br/>
-          <span>ETIQUETA</span>
+          <span>ETIQUETA</span> */}
+          {Item_Details.labels.map(val => {
+            return (
+              <li>{val}</li>
+            )
+          })}
+
         </div>
       </div>
       
     </>
   )
 }
+
+
+
+
