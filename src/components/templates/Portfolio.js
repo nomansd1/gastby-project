@@ -2,27 +2,38 @@ import React from 'react'
 // import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import "../PagesComponents/Portfolio components/Portfolio.css"
 import logo from '../../assets/blog_images/logo-name.png'
-import bg from '../../assets/blog_images/portfolio image.jpg'
+import bg from "/home/muhammadsubhan/Desktop/gastby-project/src/assets/blog_images/portfolio image.jpg"
 
-
+import Header from "../GlobalComponents/Header/Header"
 function Portfolio({pageContext}) {
  const {Item_Details}=pageContext
- 
+ console.log(Item_Details,"items")
+//  console.log(bg,"bg")
+const Image=Item_Details.images.file.url
+const image= Image.replace('//','https://').trim()
+
+const portfolioImage=Item_Details.portfolioImages[0].file.url
+const Portfolioimage1= portfolioImage.replace('//','https://').trim()
+
+const portfolioImage2=Item_Details.portfolioImages[1].file.url
+const Portfolioimage2= portfolioImage2.replace('//','https://').trim()
   return (
     <>
-      {/* <header /> */}
+      <Header />
       <div className="port__wrapper">
 
         <div className="main__div_blog">
-          <div className="port__avatar">
+            <div style={{backgroundImage:`url(${Portfolioimage1})`,width:"100%",backgroundSize:"cover"}}>
+            <div className="port__avatar">
             <span>
               We can help you to digitize your business,
             </span>
             <p>we want to go beyond.</p>
-            <button>Read more</button>
+            {/* <button>Read more</button> */}
           </div>
-          <div className="article__body">
-            <h1 className="portarticle__title" >
+            </div>
+          <div className="article__body py-3">
+            <h1 className="portarticle__title py-4" >
               What Ebay Does
             </h1>
             <p className="portsubtitle">
@@ -76,7 +87,8 @@ function Portfolio({pageContext}) {
               <span className="support__title">
                 Everything you need to <span className="inner__title">support you</span> in your dreams
               </span>
-              <img src={bg} className="leftSecImg"/>
+              <img src={Portfolioimage2} className="leftSecImg"/>
+
             </div>
             <div className="rightSupport__Sec">
               <span className="rightSec__title">Contact us</span>
@@ -94,24 +106,29 @@ function Portfolio({pageContext}) {
             </div>
           </div>
         </div>
-        <div className="port__intro">
+        <div className="port__intro ">
           <img src={logo} className="logo" />
-          <h2>&#60;BLOG&#62;</h2>
+          <h2 className="py-3">CLIENTE</h2>
+        <p style={{fontWeight:"bold",fontSize:"22px"}}>{Item_Details.title}</p>
+          <p className="py-2">
+           {Item_Details.subtitle}
+          </p>
           <p>
-            {/* Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore. */}
+            {Item_Details.portfolioShortDescription.portfolioShortDescription}
           </p>
 
-          <h2>&#60;POSTS RECIENTES&#62;</h2>
-          {/* <p><strong>Lorem Ipsum</strong> <br /> 04/oct2020</p>
-
-          <p><strong>Lorem Ipsum</strong> <br /> 04/oct2020</p>
-
-          <p><strong>Lorem Ipsum</strong> <br /> 04/oct/2020</p> */}
+          <h2 style={{wordSpacing:"2px"}}>FECHA</h2>
+          <div>
+          {Item_Details.timeOfcreation.map(val=>{
+            return(
+            <li>{val}</li>
+            )
+          })}
+          </div>
+        
           
 
-          <h2>&#60;CATEGORIAS&#62;</h2>
+          <h2>&#60;CATEGORIES&#62;</h2>
           {/* <ul>
             <li>Desarallo Web</li>
             <li>Diseno Web</li>
@@ -120,11 +137,14 @@ function Portfolio({pageContext}) {
             <li>Elementor</li>
             <li>Otros</li>
           </ul> */}
+           {Item_Details.categories.map(val => {
+            return (
+              <li>{val}</li>
+            )
+          })}
          
-          <h2>&#60;ETIQUETAS&#62;</h2>
-          {/* <span>ETIQUETA</span> <span>ETIQUETA</span><br />
-          <span>ETIQUETA</span> <span>ETIQUETA</span><br />
-          <span>ETIQUETA</span> */}
+          <h2 className="py-2" style={{wordSpacing:"2px",fontWeight:"bold"}}>&#60;WEB&#62;</h2>
+            {Item_Details.weburl}
           
         </div>
       </div>

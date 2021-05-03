@@ -41,6 +41,11 @@ exports.createPages=async ({actions,graphql})=>{
         weburl
         subtitle
         timeOfcreation
+        portfolioImages {
+          file {
+            url
+          }
+        }
      
         keywords
         title

@@ -17,13 +17,17 @@
 .port__avatar {
     height: 500px;
     width: 100%;
-    background: url("../../../assets/blog_images/portfolio\ image.jpg");
+    /* background: url("../../../assets/blog_images/portfolio\ image.jpg"); */
     background-size: cover;
     background-position:center top;
-    background-repeat: no-repeat ;
+    background-repeat: no-repeat !important ;
     padding-left: 50px;
     padding-top: 120px;
     padding-right: 250px;
+    /* border:2px solid blue; */
+
+
+   
 }
 
 .port__avatar > span {
